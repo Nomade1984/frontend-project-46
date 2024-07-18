@@ -2,7 +2,7 @@
 
 import { program } from 'commander';
 
-import compare from './compare.js';
+import compare from '../src/compare.js';
 
 program.name('gendiff').description('Compares two configuration files and shows a difference.').version('1.0.0');
 
