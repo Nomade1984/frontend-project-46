@@ -52,7 +52,9 @@ const compare = (address1, address2) => {
   const sortedArr = arrFinal.sort();
 
   for (let i = 0; i < sortedArr.length; i += 1) {
-    if (arrDiff1.includes(sortedArr[i][0])) {
+    if (sortedArr[i][1] === obj1[sortedArr[i][0]] && sortedArr[i][1] === obj2[sortedArr[i][0]]) {
+      sortedArr[i][0] = `  ${sortedArr[i][0]}`;
+    } else if (arrDiff1.includes(sortedArr[i][0])) {
       sortedArr[i][0] = `- ${sortedArr[i][0]}`;
     } else if (arrDiff2.includes(sortedArr[i][0])) {
       sortedArr[i][0] = `+ ${sortedArr[i][0]}`;
@@ -63,15 +65,14 @@ const compare = (address1, address2) => {
       sortedArr[i + 1][0] = `+ ${sortedArr[i + 1][0]}`;
     }
   }
-
-  const obj3 = {};
-
+  const trick = ['{'];
   for (let i = 0; i < sortedArr.length; i += 1) {
-    obj3[sortedArr[i][0]] = sortedArr[i][1];
+    const str = `  ${sortedArr[i][0]}: ${sortedArr[i][1]}`;
+    trick.push(str);
   }
-
-  const result = JSON.stringify(obj3);
-  console.log(result);
+  trick.push('}');
+  const finalResult = trick.join('\n');
+  console.log(finalResult);
 };
 
 export default compare;
