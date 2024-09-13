@@ -1,5 +1,7 @@
 import compare from '../src/compare.js';
 
+//import path from 'path';
+
 //const address1 = '../files/file1.json';
 
 //const address2 = '../files/file2.json';
