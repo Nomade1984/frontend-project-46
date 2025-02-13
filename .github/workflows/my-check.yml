@@ -2,9 +2,10 @@ name: My check
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches:
+      - '**'
+    tags:
+      - '**'
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check my project
+      - name: my-check
 
         uses: actions/setup-node@v4
 
