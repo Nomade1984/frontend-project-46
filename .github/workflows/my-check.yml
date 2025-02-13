@@ -1,10 +1,10 @@
 name: My check
 
 on:
-  - push:
-      branches: [master]
-  - pull_request:
-      branches: [master]
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 env:
   CI: true
