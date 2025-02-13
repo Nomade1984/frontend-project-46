@@ -1,0 +1,9 @@
+{
+  - price: 150
+  + price: 250
+  - producer: China
+  + producer: Germany
+  - quality: reasonable
+  - recommendation: false
+  + recommendation: true
+}
