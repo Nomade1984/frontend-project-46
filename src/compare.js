@@ -80,7 +80,7 @@ const compare = (address1, address2) => {
   }
   trick.push('}');
   const finalResult = trick.join('\n');
-  console.log(finalResult);
+  //console.log(finalResult);
   return finalResult;
 };
 
