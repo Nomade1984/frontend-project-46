@@ -1,8 +1,10 @@
 name: My check
 
 on:
-  - push
-  - pull_request
+  - push:
+      branches: [master]
+  - pull_request:
+      branches: [master]
 
 env:
   CI: true
@@ -13,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Check my project
 
         uses: actions/setup-node@v4
 
@@ -28,8 +30,8 @@ jobs:
       #   # https://github.com/paambaati/codeclimate-action
       #   uses: paambaati/codeclimate-action@v5.0.0
       #   # Add Code Climate secret key
-         env:
-           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-         with:
-           coverageCommand: make report
-           debug: true
+      #   env:
+      #     CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      #  with:
+      #    coverageCommand: make report
+      #    debug: true
